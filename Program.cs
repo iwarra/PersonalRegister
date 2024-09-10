@@ -20,7 +20,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Delicious Bakery register! Please start be entering the number of employees: ");
+            Console.WriteLine("Welcome to Delicious Bakery register! Please start by entering the number of employees: ");
             int numberOfEmployees = int.Parse(Console.ReadLine());
             List<Employee> employees = new List<Employee>();
 
