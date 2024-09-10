@@ -1,28 +1,20 @@
 ﻿namespace PersonalRegister
 {
 
-    class Employee
+    public class Employee(string name, string lastName, decimal salary)
     {
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public decimal Salary { get; set; }
-
-        public Employee(string name, string lastName, decimal salary)
-        {
-            Name = name;
-            LastName = lastName;
-            Salary = salary;
-        }
+        public string Name { get; set; } = name;
+        public string LastName { get; set; } = lastName;
+        public decimal Salary { get; set; } = salary;
     }
-
 
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Welcome to Delicious Bakery register! Please start by entering the number of employees: ");
             int numberOfEmployees = int.Parse(Console.ReadLine());
-            List<Employee> employees = new List<Employee>();
+            List<Employee> employees = [];
 
             for (int i = 0; i < numberOfEmployees; i++)
             {
@@ -37,7 +29,7 @@
                 Console.Write("Salary: ");
                 decimal salary = decimal.Parse(Console.ReadLine());
 
-                Employee employee = new Employee(firstName, lastName, salary);
+                Employee employee = new(firstName, lastName, salary);
                 employees.Add(employee);
             }
 
@@ -48,5 +40,4 @@
             }
         }
     }
-
 }
