@@ -22,7 +22,7 @@
         {
             Console.WriteLine("Welcome to Delicious Bakery register! Please start be entering the number of employees: ");
             int numberOfEmployees = int.Parse(Console.ReadLine());
-            //Crete a list for employees
+            List<Employee> employees = new List<Employee>();
 
             for (int i = 0; i < numberOfEmployees; i++)
             {
@@ -37,10 +37,15 @@
                 Console.Write("Salary: ");
                 decimal salary = decimal.Parse(Console.ReadLine());
 
-                //create an Employee obj and add to the employees list
+                Employee employee = new Employee(firstName, lastName, salary);
+                employees.Add(employee);
             }
 
-            //Iterate over the employees list and show info for each one
+            Console.WriteLine("\nHere is your employees list: ");
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"Name: {employee.Name} {employee.LastName}, Salary: {employee.Salary}");
+            }
         }
     }
 
